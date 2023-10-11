@@ -1,0 +1,39 @@
+@model LINQPracticeNETv7.Models.SearchViewModel
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SearchResults">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SelectedSuit" class="control-label"></label>
+                <select asp-for="SelectedSuit" asp-items="Html.GetEnumSelectList<Suit>()" class="form-control">
+                    <option selected="selected" value="">All Suits</option>
+                </select>
+                <span asp-validation-for="SelectedSuit" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="SearchValue" class="control-label"></label>
+                <input asp-for="SearchValue" class="form-control" />
+                <span asp-validation-for="SearchValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SearchType" class="control-label"></label>&nbsp;
+                <input asp-for="SearchType" type="radio" value="@SearchType.GreaterThan" checked="checked" /> Greater Than &nbsp; &nbsp;
+                <input asp-for="SearchType" type="radio" value="@SearchType.LessThan" /> Less Than
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

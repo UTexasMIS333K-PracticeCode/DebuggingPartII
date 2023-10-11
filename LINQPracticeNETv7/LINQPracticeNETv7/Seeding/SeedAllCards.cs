@@ -1,4 +1,5 @@
 ﻿using LINQPracticeNETv7.DAL;
+using LINQPracticeNETv7.Models;
 using System.Text;
 
 namespace LINQPracticeNETv7.Seeding

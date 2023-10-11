@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace LINQPracticeNETv7
+namespace LINQPracticeNETv7.Models
 {
     public enum Suit { Spades, Hearts, Clubs, Diamonds }
     public class Card
     {
         //this is the primary key for the database
         public Int32 CardID { get; set; }
+
+        //this is the color of the card
+        public String Color { get; set; }
 
         //this is the suit (as defined in the enum above)
         public Suit Suit { get; set; }
