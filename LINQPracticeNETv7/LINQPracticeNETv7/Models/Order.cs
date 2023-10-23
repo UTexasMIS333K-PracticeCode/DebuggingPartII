@@ -61,11 +61,13 @@ namespace LINQPracticeNETv7.Models
           //calculate the rest of the subtotals
             AdultSubtotal = NumberOfAdultTickets * ADULT_PRICE;
             ChildSubtotal = NumberOfChildTickets * CHILD_PRICE;
+
             Subtotal = AdultSubtotal + ChildSubtotal;
         }
 
         public void CalcTotals()
         {
+            CalcSubtotals();
             //calculate total items
             TotalItems = NumberOfAdultTickets + NumberOfChildTickets;
 

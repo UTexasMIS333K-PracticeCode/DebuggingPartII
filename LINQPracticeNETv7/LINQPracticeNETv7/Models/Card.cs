@@ -13,7 +13,7 @@ namespace LINQPracticeNETv7.Models
         public Int32 CardID { get; set; }
 
         //this is the color of the card
-        public String Color { get; set; }
+        //public String Color { get; set; }
 
         //this is the suit (as defined in the enum above)
         public Suit Suit { get; set; }

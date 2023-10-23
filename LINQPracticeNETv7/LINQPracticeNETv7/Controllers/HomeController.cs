@@ -47,9 +47,9 @@ namespace LINQPracticeNETv7.Controllers
             //select * equivalent
             var query = from c in _context.Cards
                         select c;
-
+                
             //see if user searched by suit
-            if (svm.SelectedSuit !=0)
+            if (svm.SelectedSuit !=null)
             {
                 query = query.Where(c => c.Suit == svm.SelectedSuit);
             }
