@@ -17,35 +17,12 @@ namespace LINQPracticeNETv7.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.11")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
             SqlServerModelBuilderExtensions.HasServiceTierSql(modelBuilder, "'Basic'");
             SqlServerModelBuilderExtensions.HasPerformanceLevelSql(modelBuilder, "'Basic'");
-
-            modelBuilder.Entity("LINQPracticeNETv7.Card", b =>
-                {
-                    b.Property<int>("CardID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CardID"));
-
-                    b.Property<string>("Rank")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Suit")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Value")
-                        .HasColumnType("int");
-
-                    b.HasKey("CardID");
-
-                    b.ToTable("Cards");
-                });
 
             modelBuilder.Entity("LINQPracticeNETv7.Models.AppUser", b =>
                 {
@@ -110,6 +87,29 @@ namespace LINQPracticeNETv7.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("LINQPracticeNETv7.Models.Card", b =>
+                {
+                    b.Property<int>("CardID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CardID"));
+
+                    b.Property<string>("Rank")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Suit")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Value")
+                        .HasColumnType("int");
+
+                    b.HasKey("CardID");
+
+                    b.ToTable("Cards");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

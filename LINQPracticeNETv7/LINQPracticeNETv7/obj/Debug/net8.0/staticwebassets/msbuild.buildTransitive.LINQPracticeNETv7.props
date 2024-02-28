@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/LINQPracticeNETv7.props" />
+</Project>
